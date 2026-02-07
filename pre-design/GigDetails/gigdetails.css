@@ -1,0 +1,402 @@
+/* Base Styles (inherited from feedpage style principles) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    background: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar (Keep consistent) */
+header {
+    background: #0b3c6d;
+    padding: 15px 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo span {
+    color: #ff7a18;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ff7a18;
+}
+
+/* Layout Container */
+.gig-details-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+/* Gig Info Section */
+.gig-title {
+    font-size: 28px;
+    color: #0b3c6d;
+    margin-bottom: 15px;
+}
+
+.gig-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.seller-mini-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seller-mini-profile img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.seller-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.divider {
+    color: #ccc;
+}
+
+.gig-rating {
+    color: #ff7a18;
+    font-weight: 600;
+}
+
+.rating-count {
+    color: #777;
+    font-weight: 400;
+}
+
+/* Gallery */
+.gig-gallery {
+    margin-bottom: 30px;
+}
+
+.main-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.thumbnail-list {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail-list img {
+    width: 100px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.thumbnail-list img:hover {
+    opacity: 1;
+    border: 2px solid #0b3c6d;
+}
+
+/* Description */
+.gig-description {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.gig-description h3 {
+    color: #0b3c6d;
+    margin-bottom: 15px;
+}
+
+.gig-description p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.gig-description ul {
+    list-style-position: inside;
+    margin-top: 10px;
+    color: #555;
+}
+
+.gig-description li {
+    margin-bottom: 8px;
+}
+
+/* Seller Bio */
+.seller-bio {
+    margin-bottom: 30px;
+}
+
+.seller-bio h3 {
+    color: #0b3c6d;
+    margin-bottom: 15px;
+}
+
+.bio-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.bio-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bio-content h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.tagline {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.bio-text {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.btn-contact {
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #0b3c6d;
+    color: #0b3c6d;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-contact:hover {
+    background: #0b3c6d;
+    color: #fff;
+}
+
+/* Reviews */
+.reviews-section {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.reviews-section h3 {
+    color: #0b3c6d;
+    margin-bottom: 20px;
+}
+
+.review-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.review-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.review-content h5 {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.review-stars {
+    color: #ff7a18;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.review-content p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Right Sidebar: Pricing */
+.gig-pricing {
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+}
+
+.pricing-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.pricing-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.pricing-header .price {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.package-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.delivery-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.features-list li {
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.features-list li i {
+    color: #2ecc71;
+    margin-right: 8px;
+}
+
+.btn-continue {
+    width: 100%;
+    padding: 12px;
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.btn-continue:hover {
+    background: #27ae60;
+}
+
+.btn-compare {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    color: #0b3c6d;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-compare:hover {
+    background: #f0f4f8;
+}
+
+/* Footer (Consistent) */
+footer {
+    margin-top: 50px;
+    background: #0b3c6d;
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .gig-details-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gig-pricing {
+        order: -1;
+        /* Show pricing first on mobile? Or maybe keep it below info. Let's keep distinct order for now. */
+        position: static;
+        margin-bottom: 30px;
+    }
+
+    .main-image {
+        height: 300px;
+    }
+}

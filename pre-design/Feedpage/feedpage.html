@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gig Feed | CampusGig</title>
+    <link rel="stylesheet" href="feedpage.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h2>Campus<span>Gig</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="#">Feed</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Messages</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="feed-page">
+
+        <!-- Search & Filters -->
+        <section class="feed-filters">
+            <input type="text" placeholder="Search for services, skills, or users...">
+            <select>
+                <option>All Categories</option>
+                <option>Web Development</option>
+                <option>Graphic Design</option>
+                <option>Content Writing</option>
+                <option>Digital Marketing</option>
+                <option>Tutoring</option>
+            </select>
+
+            <select>
+                <option>Sort By</option>
+                <option>Newest</option>
+                <option>Highest Rated</option>
+                <option>Lowest Price</option>
+                <option>Highest Price</option>
+            </select>
+
+            <button class="btn-search">Search</button>
+        </section>
+
+        <!-- Categories -->
+        <section class="feed-categories">
+            <span>All</span>
+            <span>Web</span>
+            <span>Design</span>
+            <span>Writing</span>
+            <span>Marketing</span>
+            <span>Tutoring</span>
+            <span>Video</span>
+        </section>
+
+        <!-- Gig Feed -->
+        <section class="gig-feed">
+
+            <!-- Gig Card -->
+            <div class="gig-card">
+                <a href="../GigDetails/gigdetails.html" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80"
+                        alt="Web Development Gig">
+                    <div class="gig-content">
+                        <div class="gig-user">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=100&q=80"
+                                alt="User">
+                            <span>Mostafa Shariare</span>
+                        </div>
+                        <h3>I will build a modern responsive website</h3>
+                        <p>Professional website for students, clubs, and startups.</p>
+                        <div class="gig-footer">
+                            <span class="rating">⭐ 4.9</span>
+                            <span class="price">৳ 3,000</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gig-card">
+                <a href="../GigDetails/gigdetails.html" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://images.unsplash.com/photo-1572044162444-ad6021102907?auto=format&fit=crop&w=800&q=80"
+                        alt="Graphic Design Gig">
+                    <div class="gig-content">
+                        <div class="gig-user">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?auto=format&fit=crop&w=100&q=80"
+                                alt="User">
+                            <span>Saadman Jawad</span>
+                        </div>
+                        <h3>I will design a professional logo</h3>
+                        <p>Clean and creative logo for your brand or club.</p>
+                        <div class="gig-footer">
+                            <span class="rating">⭐ 5.0</span>
+                            <span class="price">৳ 2,000</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="gig-card">
+                <a href="../GigDetails/gigdetails.html" style="text-decoration: none; color: inherit; display: block;">
+                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=800&q=80"
+                        alt="Content Writing Gig">
+                    <div class="gig-content">
+                        <div class="gig-user">
+                            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=100&q=80"
+                                alt="User">
+                            <span>Jayeder Rahman</span>
+                        </div>
+                        <h3>I will write assignments and reports</h3>
+                        <p>Well-researched academic and professional writing.</p>
+                        <div class="gig-footer">
+                            <span class="rating">⭐ 4.7</span>
+                            <span class="price">৳ 1,500</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Add more gig cards as needed -->
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CampusGig. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

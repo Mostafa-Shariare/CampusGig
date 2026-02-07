@@ -1,0 +1,83 @@
+header {
+    background: var(--primary-color);
+    padding: 15px 40px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h2 {
+    color: var(--white);
+    font-size: 24px;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a,
+.nav-links button {
+    color: var(--white);
+    font-size: 15px;
+    transition: 0.3s;
+    background: transparent;
+}
+
+.nav-links a:hover,
+.nav-links button:hover {
+    color: var(--secondary-color);
+}
+
+.btn-login,
+.btn-signup,
+.btn-create {
+    padding: 8px 14px;
+    border-radius: 5px;
+}
+
+.btn-login {
+    border: 1px solid var(--white);
+}
+
+.btn-signup {
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-create {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--white);
+    font-weight: 600;
+}
+
+.btn-create:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+}
+
+.btn-logout {
+    padding: 8px 14px;
+    border-radius: 5px;
+    background: transparent;
+    border: 1px solid var(--white);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
