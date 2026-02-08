@@ -49,4 +49,37 @@ router.delete("/:id", auth, async (req, res) => {
     }
 });
 
+// LIKE/UNLIKE POST
+router.put("/:id/like", auth, async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+        if (!post.likes.includes(req.user.id)) {
+            await post.updateOne({ $push: { likes: req.user.id } });
+            res.status(200).json("The post has been liked");
+        } else {
+            await post.updateOne({ $pull: { likes: req.user.id } });
+            res.status(200).json("The post has been unliked");
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+// UPDATE POST
+router.put("/:id", auth, async (req, res) => {
+    try {
+        const post = await Post.findById(req.params.id);
+        if (post.postedBy.toString() === req.user.id) {
+            const updatedPost = await Post.findByIdAndUpdate(req.params.id, {
+                $set: req.body
+            }, { new: true });
+            res.status(200).json(updatedPost);
+        } else {
+            res.status(401).json("You can only update your post");
+        }
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
 module.exports = router;

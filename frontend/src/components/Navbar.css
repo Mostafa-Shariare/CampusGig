@@ -1,6 +1,144 @@
+/* Modern Navbar */
 header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo h2 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.logo span {
+    color: var(--secondary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* Nav Actions Group */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-login-nav {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.btn-signup-nav {
     background: var(--primary-color);
-    padding: 15px 40px;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: var(--border-radius-pill);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-signup-nav:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-create-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    padding: 6px 16px;
+    border-radius: var(--border-radius-pill);
+    transition: var(--transition);
+}
+
+.btn-create-nav:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-messages {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    position: relative;
+    padding: 5px;
+    transition: var(--transition);
+}
+
+.nav-messages:hover {
+    color: var(--primary-color);
+}
+
+.btn-logout-nav {
+    color: var(--danger-color);
+    background: transparent;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+}
+
+.btn-logout-nav:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsive (basic support) */
+@media (max-width: 900px) {
+    .nav-links {
+        display: none;
+        /* In a real app, implement hamburger menu */
+    }
 }
 
 .navbar {

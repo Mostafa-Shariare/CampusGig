@@ -12,25 +12,31 @@ const Navbar = () => {
                 <div className="logo">
                     <Link to="/"><h2>Campus<span>Gig</span></h2></Link>
                 </div>
+
                 <ul className="nav-links">
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/gigs">Gigs</Link></li>
-                    <li><Link to="/feed">Feed</Link></li>
+                    <li><Link to="/gigs">Find Gigs</Link></li>
+                    <li><Link to="/feed">Community</Link></li>
+                </ul>
+
+                <div className="nav-actions">
                     {token ? (
-                        <>
-                            <li><Link to="/messages">Messages</Link></li>
-                            <li><Link to="/create-gig" className="btn-create">+ Gig</Link></li>
-                            <li><Link to="/create-post" className="btn-create">+ Post</Link></li>
-                            <li><Link to="/profile">Profile</Link></li>
-                            <li><button onClick={logout} className="btn-logout">Logout</button></li>
-                        </>
+                        <div className="user-menu">
+                            <Link to="/create-post" className="btn-create-nav"><i className="fa-solid fa-plus"></i> Post</Link>
+                            <Link to="/create-gig" className="btn-create-nav"><i className="fa-solid fa-briefcase"></i> Gig</Link>
+                            <Link to="/messages" className="nav-messages" title="Messages">
+                                <i className="fa-regular fa-envelope"></i>
+                            </Link>
+                            <Link to="/profile" className="nav-profile-link">Profile</Link>
+                            <button onClick={logout} className="btn-logout-nav">Logout</button>
+                        </div>
                     ) : (
                         <>
-                            <li><Link to="/login" className="btn-login">Login</Link></li>
-                            <li><Link to="/register" className="btn-signup">Sign Up</Link></li>
+                            <Link to="/login" className="btn-login-nav">Log In</Link>
+                            <Link to="/register" className="btn-signup-nav">Join Now</Link>
                         </>
                     )}
-                </ul>
+                </div>
             </nav>
         </header>
     );

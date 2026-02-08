@@ -10,6 +10,7 @@ const gigRoute = require("./routes/gigs");
 const postRoute = require("./routes/posts");
 const uploadRoute = require("./routes/upload");
 const conversationRoute = require("./routes/conversations");
+const commentRoute = require("./routes/comments");
 
 require("./conn/conn")
 
@@ -23,6 +24,9 @@ app.use("/api/gigs", gigRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/upload", uploadRoute);
 app.use("/api/conversations", conversationRoute);
+app.use("/api/comments", commentRoute);
+app.use("/api/orders", require("./routes/orders"));
+app.use("/api/reviews", require("./routes/reviews"));
 
 app.get("/", (req, res) => {
     res.send("Hello World! this is backend")

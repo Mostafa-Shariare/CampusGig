@@ -14,6 +14,8 @@ import EditProfile from './pages/EditProfile';
 import UserProfile from './pages/UserProfile';
 import Messages from './pages/Messages';
 import Chat from './pages/Chat';
+import EditPost from './pages/EditPost';
+import EditGig from './pages/EditGig';
 import './App.css';
 
 function App() {
@@ -32,11 +34,13 @@ function App() {
               <Route path="/create-gig" element={<CreateGig />} />
               <Route path="/feed" element={<Feed />} />
               <Route path="/create-post" element={<CreatePost />} />
+              <Route path="/edit-post/:id" element={<EditPost />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/edit-profile" element={<EditProfile />} />
               <Route path="/user/:id" element={<UserProfile />} />
               <Route path="/messages" element={<Messages />} />
               <Route path="/messages/:conversationId" element={<Chat />} />
+              <Route path="/edit-gig/:id" element={<EditGig />} />
             </Routes>
           </main>
         </div>

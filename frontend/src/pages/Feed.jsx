@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import PostCard from '../components/PostCard';
 import './Feed.css';
 
 const Feed = () => {
@@ -22,6 +23,10 @@ const Feed = () => {
         }
     };
 
+    const handleDeletePost = (deletedPostId) => {
+        setPosts(posts.filter(post => post._id !== deletedPostId));
+    };
+
     return (
         <div className="feed-page">
             <div className="feed-header">
@@ -36,25 +41,8 @@ const Feed = () => {
                         <p className="no-posts">No posts yet. Be the first to share something!</p>
                     ) : (
                         posts.map((post) => (
-                            <div key={post._id} className="post-card">
-                                <Link to={`/user/${post.postedBy?._id}`} className="post-header">
-                                    <img
-                                        src={post.postedBy?.avatar || '/default-avatar.png'}
-                                        alt={post.postedBy?.username}
-                                        className="post-avatar"
-                                    />
-                                    <div className="post-info">
-                                        <h4>{post.postedBy?.username || 'Anonymous'}</h4>
-                                        <span className="post-date">
-                                            {new Date(post.createdAt).toLocaleDateString()}
-                                        </span>
-                                    </div>
-                                </Link>
-                                <h3>{post.title}</h3>
-                                <p>{post.description}</p>
-                                {post.image && (
-                                    <img src={post.image} alt={post.title} className="post-image" />
-                                )}
+                            <div key={post._id} className="post-card-container">
+                                <PostCard post={post} onDelete={handleDeletePost} />
                             </div>
                         ))
                     )}

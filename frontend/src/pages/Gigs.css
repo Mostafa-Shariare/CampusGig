@@ -1,133 +1,204 @@
+/* Modern Gigs Page */
 .gigs-page {
-    padding: 40px;
-    max-width: 1200px;
+    padding: 30px 20px;
+    max-width: var(--container-width);
     margin: 0 auto;
+    min-height: calc(100vh - var(--header-height));
 }
 
 .gigs-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color-light);
 }
 
 .gigs-header h1 {
-    font-size: 32px;
+    font-size: 1.75rem;
+    margin: 0;
 }
 
 .gigs-actions {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     align-items: center;
 }
 
-.gigs-actions select {
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 15px;
+.category-select {
+    padding: 10px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-pill);
+    font-size: 0.95rem;
     background: white;
     cursor: pointer;
+    min-width: 150px;
+    transition: var(--transition);
+}
+
+.category-select:hover,
+.category-select:focus {
+    border-color: var(--primary-color);
+    outline: none;
 }
 
 .btn-create-gig {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-pill);
     font-weight: 600;
-    transition: background 0.3s;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-create-gig:hover {
-    background: #e66d15;
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .loading,
 .no-gigs {
     text-align: center;
-    padding: 40px;
-    color: #666;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+    background: white;
+    border-radius: var(--border-radius);
+    border: 1px dashed var(--border-color);
 }
 
 .gigs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
 
 .gig-card {
     background: white;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: var(--transition);
+    border: 1px solid var(--border-color-light);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    /* remove link underline */
 }
 
 .gig-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
 }
 
-.gig-card img {
+.gig-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
     width: 100%;
-    height: 180px;
+}
+
+.gig-image-container img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gig-card:hover .gig-image-container img {
+    transform: scale(1.05);
 }
 
 .gig-content {
     padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.gig-seller-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.seller-avatar-small {
+    width: 24px !important;
+    /* Force override if needed, but scoping should handle it */
+    height: 24px !important;
+    border-radius: 50%;
+    object-fit: cover;
+    min-width: 24px;
+    /* Prevent shrinking */
+}
+
+.seller-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .gig-content h3 {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 1.15rem;
+    line-height: 1.4;
+    color: var(--text-primary);
 }
 
 .gig-description {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 15px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-height: 1.5;
+    flex: 1;
 }
 
 .gig-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color-light);
 }
 
-.gig-category {
-    background: #eaf2ff;
-    color: var(--primary-color);
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
+.gig-rating {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ffc107;
     font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.gig-rating span {
+    color: var(--text-secondary);
+    font-weight: 400;
 }
 
 .gig-price {
-    color: var(--secondary-color);
+    color: var(--text-primary);
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.25rem;
 }
 
-.btn-view {
-    display: block;
-    text-align: center;
-    background: var(--primary-color);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: background 0.3s;
-}
-
-.btn-view:hover {
-    background: #0a3359;
+.gig-price span {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-right: 4px;
 }
